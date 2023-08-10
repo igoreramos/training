@@ -1,2 +1,0 @@
-# training
-local to training 
