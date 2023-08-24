@@ -85,8 +85,8 @@ const agendamento = {
     Sabado: "Sábado",
     Domingo: "Domingo"
 };
+
 console.log(agendamento);
-console.log("Hoje", agendamento.Quarta, "terá café da manhã grátis");
 
 // 12.
 
