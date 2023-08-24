@@ -160,5 +160,42 @@
   }
   console.log(calcularIMC(81, 185));
 
+  // 5.
+
+  function contarVogais(texto) {
+    const vogais = "aeiouAEIOU";
+    let contador = 0;
+
+    for (let letra of texto) {
+      if (vogais.includes(letra)) {
+        contador++
+      }
+    }
+
+    return contador;
+  }
+  console.log(contarVogais("aaaaaaaaa"))
+
+  // 6.
+
+  function celsiusParaFahrenheit(celsius){
+    return (celsius * 9) / 5 + 32;
+  }
+  console.log(celsiusParaFahrenheit(24))
+
+  // 7.
+
+  function gerarSenha(tamanho) {
+    const caracteres = "abcdefghijklmnopqrstuvxzABCDEFGHIJKLMNOPQRSTUVXZ12345678910";
+    let senha = "";
+
+    for (let i  = 0; i < tamanho; i++) {
+      const indice = Math.floor(Math.random() * caracteres.length);
+      senha += caracteres.charAt (indice);
+    }
+    return senha;
+  }
+  console.log(gerarSenha(25))
+
   
 
