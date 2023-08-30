@@ -321,21 +321,21 @@
 
 // 13. Escreva a função para cálculo do N-ésimo termo da série de Fibonacci utilizando recursividade.
 
-function fibonacci(n) {
-    if (n <= 0) {
-        return 0;
-    } else if (n === 1) {
-        return 1;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-};
+// function fibonacci(n) {
+//     if (n <= 0) {
+//         return 0;
+//     } else if (n === 1) {
+//         return 1;
+//     } else {
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+// };
 
-// Sequência fibonnaci até o n-ésimo 17;  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
+// // Sequência fibonnaci até o n-ésimo 17;  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
 
-const n = 17; 
-const resultado = fibonacci(n);
-console.log(`O ${n}-ésimo termo da sequência de Fibonacci é ${resultado}.`);
+// const n = 17; 
+// const resultado = fibonacci(n);
+// console.log(`O ${n}-ésimo termo da sequência de Fibonacci é ${resultado}.`);
 
 
 
