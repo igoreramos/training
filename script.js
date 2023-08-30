@@ -153,12 +153,12 @@
 
 // 9. Elabore um programa em JS para que leia três números e mostre-os em ordem crescente.
 
-let array = [5, 4, 3, 2, 10, 30];
-console.log(array.sort());
+// let array = [5, 4, 3, 2, 10, 30];
+// console.log(array.sort());
 
-const array1 = [5, 4, 3, 2, 10, 30];
-array1.sort((a, b) => a - b);
-console.log(array1);
+// const array1 = [5, 4, 3, 2, 10, 30];
+// array1.sort((a, b) => a - b);
+// console.log(array1);
 
 // 10. Crie um programa de conversão entre as temperaturas Celsius, Farenheit e Kelvin usando funções para isso. 
 // O programa deve ler a opção escolhida pelo usuário, que escolhe uma determinada conversão entre escalas termométricas e,
@@ -171,10 +171,174 @@ console.log(array1);
 // 5.	de Kelvin para Celsius.
 // 6.	de Kelvin para Fahrenheit.
 
-const readline = require("readline-sync")
-const Celsius = parseFloat(readline.question("Digite a temperatura em Celsius: "));
-const Fahrenheit = parseFloat(readline.question("Digite a temperatura em Fahrenheit: "));
-const Kelvin = parseFloat(readline.question("Digite a temperatura em Kelvin"));
+
+// function celsiusToFahrenheit(celsius) {
+//     return (celsius * 9/5) + 32;
+// }
+
+// function celsiusToKelvin(celsius) {
+//     return celsius + 273.15;
+// }
+
+// function fahrenheitToCelsius(fahrenheit) {
+//     return (fahrenheit - 32) * 5/9;
+// }
+
+// function fahrenheitToKelvin(fahrenheit) {
+//     return (fahrenheit + 459.67) * 5/9;
+// }
+
+// function kelvinToCelsius(kelvin) {
+//     return kelvin - 273.15;
+// }
+
+// function kelvinToFahrenheit(kelvin) {
+//     return (kelvin * 9/5) - 459.67;
+// }
+
+// const readline = require ("readline-sync");
+
+// function main() {
+//     const option = parseInt(readline.question(`Escolha uma opção:\n
+//     1. de Celsius para Fahrenheit
+//     2. de Celsius para Kelvin
+//     3. de Fahrenheit para Celsius
+//     4. de Fahrenheit para Kelvin
+//     5. de Kelvin para Celsius
+//     6. de Kelvin para Fahrenheit
+//     7. Digite a opção aqui: `));
+   
+//     const temperatura = parseFloat(readline.question("Digite a temperatura a ser convertida: "));
+
+//     let resultado;
+
+//     switch (option) {
+//         case 1:
+//             resultado = celsiusToFahrenheit(temperatura);
+//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}°F`);
+//             break;
+//         case 2:
+//             resultado = celsiusToKelvin(temperatura);
+//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}K`);
+//             break;
+//         case 3:
+//             resultado = fahrenheitToCelsius(temperatura);
+//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}°C`);
+//             break;
+//         case 4:
+//             resultado = fahrenheitToKelvin(temperatura);
+//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}K`);
+//             break;
+//         case 5:
+//             resultado = kelvinToCelsius(temperatura);
+//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°C`);
+//             break;
+//         case 6:
+//             resultado = kelvinToFahrenheit(temperatura);
+//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°F`);
+//             break;
+//         default:
+//             console.log("Opção inválida.");
+//     }
+// }
+
+// main();
+
+
+// 11. Fazer uma função que recebe um mês e um ano como parâmetros e retorna o número de dias daquele mês daquele ano. 
+// Dica: um ano é bissexto quando é múltiplo de 4 e não múltiplo de 100, ou também quando é múltiplo de 400.
+
+// function anoBissexto(ano) {
+//     return (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
+// }
+
+// function diasNoMes(mes, ano) {
+//     const trintaEumDias = [1, 3, 5, 7, 8, 10, 12];
+//     const trintaDias = [4, 6, 9, 11];
+
+//     if (trintaEumDias.includes(mes)) {
+//         return 31;
+//     } else if (trintaDias.includes(mes)) {
+//         return 30;
+//     } else if (mes === 2) {
+//         if (anoBissexto(ano)) {
+//             return 29;
+//         } else {
+//             return 28;
+//         }
+//     } else {
+//         return -1; 
+//     }
+// }
+
+// const readline = require("readline-sync")
+
+// function main() {
+//     const mes = parseInt(readline.question("Digite o número do mês (1 a 12):"));
+//     const ano = parseInt(readline.question("Digite o ano:"));
+
+//     const diasDoMes = diasNoMes(mes, ano);
+//     if (diasDoMes === -1) {
+//         console.log("Mês inválido");
+//     } else {
+//         console.log(`O mês ${mes} do ano ${ano} tem ${diasDoMes} dias.`);
+//     }
+// }
+
+// main();
+
+// 12. Faça uma função que recebe, por parâmetro, a hora de início e a hora de término de um jogo, ambas subdivididas em 2 valores distintos: horas e minutos. 
+// A função deve retornar, a duração do jogo em minutos, considerando que o tempo máximo de duração de um jogo é de 24 horas e que o jogo pode começar em um dia e terminar no outro.
+
+// const readline = require(`readline-sync`)
+
+// function duracaoDoJogo() {
+//     const inicioHoras = parseInt(readline.question("Hora de início (horas): "));
+//     const inicioMinutos = parseInt(readline.question("Hora de início (minutos): "));
+
+//     const fimHoras = parseInt(readline.question("Hora de término (horas): "));
+//     const fimMinutos = parseInt(readline.question("Hora de término (minutos): "));
+
+//     const inicioEmMinutos = inicioHoras * 60 + inicioMinutos;
+//     const fimEmMinutos = fimHoras * 60 + fimMinutos;
+
+//     let duracaoEmMinutos;
+//     if (fimEmMinutos >= inicioEmMinutos) {
+//         duracaoEmMinutos = fimEmMinutos - inicioEmMinutos;
+//     } else {
+//         duracaoEmMinutos = (24 * 60 - inicioEmMinutos) + fimEmMinutos;
+//     };
+
+//     return duracaoEmMinutos;
+// };
+
+// function main() {
+//     const tempoDeJogo = duracaoDoJogo();
+//     console.log(`A duração do jogo foi de ${tempoDeJogo} minutos.`)
+// };
+
+// main();
+
+// 13. Escreva a função para cálculo do N-ésimo termo da série de Fibonacci utilizando recursividade.
+
+function fibonacci(n) {
+    if (n <= 0) {
+        return 0;
+    } else if (n === 1) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+};
+
+// Sequência fibonnaci até o n-ésimo 17;  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
+
+const n = 17; 
+const resultado = fibonacci(n);
+console.log(`O ${n}-ésimo termo da sequência de Fibonacci é ${resultado}.`);
+
+
+
 
 
 
