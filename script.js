@@ -73,7 +73,9 @@
 //   });
 // });
 
-// 4. Faça um programa que calcule e mostre a soma dos 50 primeiros números pares. Faça três versões desse programa, cada uma usando uma estrutura de repetição diferente (for, while, do-while). Qual das três estruturas é a mais adequada para este programa? Por que?
+// 4. Faça um programa que calcule e mostre a soma dos 50 primeiros números pares. Faça três versões desse programa, 
+// cada uma usando uma estrutura de repetição diferente (for, while, do-while). 
+// Qual das três estruturas é a mais adequada para este programa? Por que?
 
 // let soma = 0;
 // for (let i = 0; i <= 100; i += 2) {
@@ -99,12 +101,89 @@
 
 // 5.  Faça um programa em Javascript que receba do usuário um número N e depois imprima os N primeiros números naturais ímpares.
 
-const readline = require("readline-sync");
-const N = parseInt(readline.question("Digite um número N: "));
+// const readline = require("readline-sync");
+// const N = parseInt(readline.question("Digite um número N: "));
 
-for (let contador = 0, numeroImpar = 1; contador < N; contador++, numeroImpar += 2) {
-  console.log(numeroImpar);
-}
+// for (let contador = 0, numeroImpar = 1; contador < N; contador++, numeroImpar += 2) {
+//   console.log(numeroImpar);
+// }
+
+// 6. Uma empresa contrata um encanador a R$ 30,00 por dia. Crie um programa que solicite o número 
+// de dias trabalhados pelo encanador e imprima a quantia líquida que deverá ser paga, sabendo-se que 
+// são descontados 8% para pagamento de impostos e taxas devidas.
+
+// const readline = require("readline-sync");
+// const valorDiario = 30;
+// const diasTrabalhados = parseFloat(readline.question("Digite os dias trabalhados: "));
+// const salarioBruto = valorDiario * diasTrabalhados;
+// const desconto = salarioBruto * 0.08;
+// const salarioLiquido = salarioBruto - desconto;
+// console.log(`O salário bruto do Encanador é ${salarioBruto}. Tendo trabalhado ${diasTrabalhados} dias e sendo descontado 8% para impostos e 
+// taxas devidas, o Encanador recebeu ${salarioLiquido}`);
+
+// 7. Faça um programa para ler um horário (hora:minuto:segundo) de início e a duração, em segundos, de uma experiência biológica.
+//  O programa deve informar o horário (hora:minuto:segundo) de término da mesma.
+
+// const readline = require("readline-sync");
+// function formatNumber(number) {
+//   return number < 10 ? `0${number}` : number;
+// };
+// const inicio = readline.question("Digite o horário de início (hh:mm:ss): ");
+// const [inicioHora, inicioMinuto, inicioSegundo] = inicio.split(":").map(Number);
+// const duracaoSegundos = parseInt(readline.question("Digite a duração em segundos: "));
+// const segundosTotais = (inicioHora * 3600) + (inicioMinuto * 60) + inicioSegundo + duracaoSegundos;
+// const terminoHora = Math.floor(segundosTotais / 3600) % 24;
+// const terminoMinuto = Math.floor((segundosTotais % 3600) / 60);
+// const terminoSegundo = segundosTotais % 60;
+// const horarioTermino = `${formatNumber(terminoHora)}:${formatNumber(terminoMinuto)}:${formatNumber(terminoSegundo)}`;
+// console.log(`O horário de término da experiência é: ${horarioTermino}`);
+
+// 8.Uma empresa paga R$ 10,00 por hora normal trabalhada e R$ 15,00 por hora extra. Escreva um programa que leia o total de horas normais 
+// e o total de horas extras trabalhadas por um empregado em um ano e calcule o salário anual deste trabalhador.
+
+// const readline = require ("readline-sync");
+// const horaNormal = 10;
+// const horaExtra = 15;
+// const horaNormalTotal = parseFloat(readline.question("Digite o total de horas normais trabalhadas: "));
+// const horaExtraTotal = parseFloat(readline.question("Digite o total de horas extras trabalhadas: "));
+// const horaGeral = horaNormalTotal + horaExtraTotal;
+// const salarioAnual = ((horaNormal * horaNormalTotal) + (horaExtra * horaExtraTotal)) * 12;
+// console.log(`Jeferson trabalha ${horaNormalTotal}h por dia, mais ${horaExtraTotal}h de horas extras.
+// Mensalmente, Jeferson trabalha ${horaGeral} horas por dia. E anualmente recebe R$${salarioAnual}.`);
+
+// 9. Elabore um programa em JS para que leia três números e mostre-os em ordem crescente.
+
+let array = [5, 4, 3, 2, 10, 30];
+console.log(array.sort());
+
+const array1 = [5, 4, 3, 2, 10, 30];
+array1.sort((a, b) => a - b);
+console.log(array1);
+
+// 10. Crie um programa de conversão entre as temperaturas Celsius, Farenheit e Kelvin usando funções para isso. 
+// O programa deve ler a opção escolhida pelo usuário, que escolhe uma determinada conversão entre escalas termométricas e,
+// em seguida, o programa solicita a temperatura a ser convertida. As opções de conversão são as seguintes: 
+// utilize o switch case
+// 1.	de Celsius para Fahrenheit.
+// 2.	de Celsius para Kelvin.
+// 3.	de Fahrenheit para Celsius.
+// 4.	de Fahrenheit para Kelvin.
+// 5.	de Kelvin para Celsius.
+// 6.	de Kelvin para Fahrenheit.
+
+const readline = require("readline-sync")
+const Celsius = parseFloat(readline.question("Digite a temperatura em Celsius: "));
+const Fahrenheit = parseFloat(readline.question("Digite a temperatura em Fahrenheit: "));
+const Kelvin = parseFloat(readline.question("Digite a temperatura em Kelvin"));
+
+
+
+
+
+
+
+
+
 
 
 
