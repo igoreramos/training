@@ -172,78 +172,94 @@
 // 6.	de Kelvin para Fahrenheit.
 
 
-// function celsiusToFahrenheit(celsius) {
-//     return (celsius * 9/5) + 32;
-// }
+function celsiusParaFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+};
 
-// function celsiusToKelvin(celsius) {
-//     return celsius + 273.15;
-// }
+function celsiusParaKelvin(celsius) {
+    return celsius + 273.15;
+};
 
-// function fahrenheitToCelsius(fahrenheit) {
-//     return (fahrenheit - 32) * 5/9;
-// }
+function fahrenheitParaCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+};
 
-// function fahrenheitToKelvin(fahrenheit) {
-//     return (fahrenheit + 459.67) * 5/9;
-// }
+function fahrenheitParaKelvin(fahrenheit) {
+    return (fahrenheit + 459.67) * 5/9;
+};
 
-// function kelvinToCelsius(kelvin) {
-//     return kelvin - 273.15;
-// }
+function kelvinParaCelsius(kelvin) {
+    return kelvin - 273.15;
+};
 
-// function kelvinToFahrenheit(kelvin) {
-//     return (kelvin * 9/5) - 459.67;
-// }
+function kelvinParaFahrenheit(kelvin) {
+    return (kelvin * 9/5) - 459.67;
+};
 
-// const readline = require ("readline-sync");
+const readline = require ("readline-sync");
 
-// function main() {
-//     const option = parseInt(readline.question(`Escolha uma opção:\n
-//     1. de Celsius para Fahrenheit
-//     2. de Celsius para Kelvin
-//     3. de Fahrenheit para Celsius
-//     4. de Fahrenheit para Kelvin
-//     5. de Kelvin para Celsius
-//     6. de Kelvin para Fahrenheit
-//     7. Digite a opção aqui: `));
+function menu() {
+    const opcoes = parseInt(readline.question(`Escolha uma opção:\n
+    1. de Celsius para Fahrenheit
+    2. de Celsius para Kelvin
+    3. de Fahrenheit para Celsius
+    4. de Fahrenheit para Kelvin
+    5. de Kelvin para Celsius
+    6. de Kelvin para Fahrenheit
+    Digite a opção aqui: `));
+    
+    console.log();
+
+    if (opcoes == 0 || opcoes >= 7) {
+        console.log("****** Opção inexistente, digite apenas números de 1 a 6. ******");
+        console.log();
+        return menu();        
+    } else {
+
+       console.log();
    
-//     const temperatura = parseFloat(readline.question("Digite a temperatura a ser convertida: "));
+       const temperatura = parseFloat(readline.question("Digite a temperatura a ser convertida: "));
+       var resultado;
 
-//     let resultado;
+       switch (opcoes) {
+          case 1:
+            resultado = celsiusParaFahrenheit(temperatura);
+            console.log();
+            console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}°F`);
+            break;
+          case 2:
+            resultado = celsiusParaKelvin(temperatura);
+            console.log();
+            console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}K`);
+            break;
+          case 3:
+            resultado = fahrenheitParaCelsius(temperatura);
+            console.log();
+            console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}°C`);
+            break;
+          case 4:
+            resultado = fahrenheitParaKelvin(temperatura);
+            console.log();
+            console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}K`);
+            break;
+          case 5:
+            resultado = kelvinParaCelsius(temperatura);
+            console.log();
+            console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°C`);
+            break;
+          case 6:
+            resultado = kelvinParaFahrenheit(temperatura);
+            console.log();
+            console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°F`);
+            break;
+          default:
+            console.log();
+            console.log("Temperatura não encontrada.");
+        };
+    };
+};
 
-//     switch (option) {
-//         case 1:
-//             resultado = celsiusToFahrenheit(temperatura);
-//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}°F`);
-//             break;
-//         case 2:
-//             resultado = celsiusToKelvin(temperatura);
-//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}K`);
-//             break;
-//         case 3:
-//             resultado = fahrenheitToCelsius(temperatura);
-//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}°C`);
-//             break;
-//         case 4:
-//             resultado = fahrenheitToKelvin(temperatura);
-//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}K`);
-//             break;
-//         case 5:
-//             resultado = kelvinToCelsius(temperatura);
-//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°C`);
-//             break;
-//         case 6:
-//             resultado = kelvinToFahrenheit(temperatura);
-//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°F`);
-//             break;
-//         default:
-//             console.log("Opção inválida.");
-//     }
-// }
-
-// main();
-
+menu();
 
 // 11. Fazer uma função que recebe um mês e um ano como parâmetros e retorna o número de dias daquele mês daquele ano. 
 // Dica: um ano é bissexto quando é múltiplo de 4 e não múltiplo de 100, ou também quando é múltiplo de 400.
