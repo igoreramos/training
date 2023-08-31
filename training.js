@@ -130,7 +130,7 @@
         console.log("Ímpar");
       } else {
         console.log("Vazio");
-      }
+      };
             
      
        

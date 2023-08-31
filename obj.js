@@ -126,6 +126,6 @@ const ecommerce = {
     Enviado: "Pagamento confirmado, pedido enviado",
     Entregue: "Pedido entregue ao destinatário"
 };
-console.log();
+console.log();;
 
 

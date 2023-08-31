@@ -132,7 +132,7 @@
    }  
   }
   console.log(pontos);
-  console.log("A soma de todos os ítens é:", soma)
+  console.log("A soma de todos os ítens é:", soma);
 
  
 

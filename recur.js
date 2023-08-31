@@ -27,4 +27,5 @@
 //   const numero = 7
 //   const result = fibonacci(numero);
 //   console.log(`O ${numero}-énimo termo da sequência de Fibonacci é ${result}`);
+//
   

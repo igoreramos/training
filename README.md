@@ -1,2 +1,3 @@
 # Softex
-local to training 
+Conteúdos do curso FAP - Softex
+Exercícios

@@ -32,4 +32,4 @@ else if (op == "/") {
     resultado = divisao(n1,n2);
 };
 
-console.log(resultado)
+console.log(resultado);

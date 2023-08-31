@@ -195,7 +195,7 @@
     }
     return senha;
   }
-  console.log(gerarSenha(25))
+  console.log(gerarSenha(25));
 
   
 
