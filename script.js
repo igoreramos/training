@@ -125,18 +125,21 @@
 //  O programa deve informar o horário (hora:minuto:segundo) de término da mesma.
 
 // const readline = require("readline-sync");
-// function formatNumber(number) {
-//   return number < 10 ? `0${number}` : number;
+
+// function menu(numero) {
+//   return numero < 10 ? `0${numero}` : numero;
 // };
+
 // const inicio = readline.question("Digite o horário de início (hh:mm:ss): ");
 // const [inicioHora, inicioMinuto, inicioSegundo] = inicio.split(":").map(Number);
-// const duracaoSegundos = parseInt(readline.question("Digite a duração em segundos: "));
-// const segundosTotais = (inicioHora * 3600) + (inicioMinuto * 60) + inicioSegundo + duracaoSegundos;
-// const terminoHora = Math.floor(segundosTotais / 3600) % 24;
-// const terminoMinuto = Math.floor((segundosTotais % 3600) / 60);
-// const terminoSegundo = segundosTotais % 60;
-// const horarioTermino = `${formatNumber(terminoHora)}:${formatNumber(terminoMinuto)}:${formatNumber(terminoSegundo)}`;
-// console.log(`O horário de término da experiência é: ${horarioTermino}`);
+// const duracaoEmSegundos = parseInt(readline.question("Digite a duração em segundos: "));
+// const segundosTotais = (inicioHora * 3600) + (inicioMinuto * 60) + inicioSegundo + duracaoEmSegundos;
+// const terminoEmHoras = Math.floor(segundosTotais / 3600) % 24;
+// const terminoEmMinutos = Math.floor((segundosTotais % 3600) / 60);
+// const terminoEmSegundos = segundosTotais % 60;
+// const horarioDoTermino = `${menu(terminoEmHoras)}:${menu(terminoEmMinutos)}:${menu(terminoEmSegundos)}`;
+// console.log(`O horário de término da experiência é: ${horarioDoTermino}`);
+
 
 // 8.Uma empresa paga R$ 10,00 por hora normal trabalhada e R$ 15,00 por hora extra. Escreva um programa que leia o total de horas normais 
 // e o total de horas extras trabalhadas por um empregado em um ano e calcule o salário anual deste trabalhador.
@@ -172,101 +175,115 @@
 // 6.	de Kelvin para Fahrenheit.
 
 
-function celsiusParaFahrenheit(celsius) {
-    return (celsius * 9/5) + 32;
-};
+// function celsiusParaFahrenheit(celsius) {
+//     return (celsius * 9/5) + 32;
+// };
 
-function celsiusParaKelvin(celsius) {
-    return celsius + 273.15;
-};
+// function celsiusParaKelvin(celsius) {
+//     return celsius + 273.15;
+// };
 
-function fahrenheitParaCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5/9;
-};
+// function fahrenheitParaCelsius(fahrenheit) {
+//     return (fahrenheit - 32) * 5/9;
+// };
 
-function fahrenheitParaKelvin(fahrenheit) {
-    return (fahrenheit + 459.67) * 5/9;
-};
+// function fahrenheitParaKelvin(fahrenheit) {
+//     return (fahrenheit + 459.67) * 5/9;
+// };
 
-function kelvinParaCelsius(kelvin) {
-    return kelvin - 273.15;
-};
+// function kelvinParaCelsius(kelvin) {
+//     return kelvin - 273.15;
+// };
 
-function kelvinParaFahrenheit(kelvin) {
-    return (kelvin * 9/5) - 459.67;
-};
+// function kelvinParaFahrenheit(kelvin) {
+//     return (kelvin * 9/5) - 459.67;
+// };
 
-const readline = require ("readline-sync");
+// const readline = require ("readline-sync");
 
-function menu() {
-    const opcoes = parseInt(readline.question(`Escolha uma opção:\n
-    1. de Celsius para Fahrenheit
-    2. de Celsius para Kelvin
-    3. de Fahrenheit para Celsius
-    4. de Fahrenheit para Kelvin
-    5. de Kelvin para Celsius
-    6. de Kelvin para Fahrenheit
-    Digite a opção aqui: `));
+// function menu() {
+//     const opcoes = parseInt(readline.question(`Escolha uma opção:\n
+//     1. de Celsius para Fahrenheit
+//     2. de Celsius para Kelvin
+//     3. de Fahrenheit para Celsius
+//     4. de Fahrenheit para Kelvin
+//     5. de Kelvin para Celsius
+//     6. de Kelvin para Fahrenheit
+//     Digite a opção aqui: `));
     
-    console.log();
+//     console.log();
 
-    if (opcoes == 0 || opcoes >= 7) {
-        console.log("****** Opção inexistente, digite apenas números de 1 a 6. ******");
-        console.log();
-        return menu();        
-    } else {
+//     if (opcoes == 0 || opcoes >= 7 || opcoes === String) {
+//         console.log("****** Opção inexistente, digite apenas números de 1 a 6. ******");
+//         console.log();
+//         return menu();        
+//     } else {
 
-       console.log();
+//        console.log();
    
-       const temperatura = parseFloat(readline.question("Digite a temperatura a ser convertida: "));
-       var resultado;
+//        const temperatura = parseFloat(readline.question("Digite a temperatura a ser convertida: "));
+//        var resultado;
 
-       switch (opcoes) {
-          case 1:
-            resultado = celsiusParaFahrenheit(temperatura);
-            console.log();
-            console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}°F`);
-            break;
-          case 2:
-            resultado = celsiusParaKelvin(temperatura);
-            console.log();
-            console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}K`);
-            break;
-          case 3:
-            resultado = fahrenheitParaCelsius(temperatura);
-            console.log();
-            console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}°C`);
-            break;
-          case 4:
-            resultado = fahrenheitParaKelvin(temperatura);
-            console.log();
-            console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}K`);
-            break;
-          case 5:
-            resultado = kelvinParaCelsius(temperatura);
-            console.log();
-            console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°C`);
-            break;
-          case 6:
-            resultado = kelvinParaFahrenheit(temperatura);
-            console.log();
-            console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°F`);
-            break;
-          default:
-            console.log();
-            console.log("Temperatura não encontrada.");
-        };
-    };
-};
+//        switch (opcoes) {
+//           case 1:
+//             resultado = celsiusParaFahrenheit(temperatura);
+//             console.log();
+//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}°F`);
+//             break;
+//           case 2:
+//             resultado = celsiusParaKelvin(temperatura);
+//             console.log();
+//             console.log(`${temperatura}°C equivale a ${resultado.toFixed(2)}K`);
+//             break;
+//           case 3:
+//             resultado = fahrenheitParaCelsius(temperatura);
+//             console.log();
+//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}°C`);
+//             break;
+//           case 4:
+//             resultado = fahrenheitParaKelvin(temperatura);
+//             console.log();
+//             console.log(`${temperatura}°F equivale a ${resultado.toFixed(2)}K`);
+//             break;
+//           case 5:
+//             resultado = kelvinParaCelsius(temperatura);
+//             console.log();
+//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°C`);
+//             break;
+//           case 6:
+//             resultado = kelvinParaFahrenheit(temperatura);
+//             console.log();
+//             console.log(`${temperatura}K equivale a ${resultado.toFixed(2)}°F`);
+//             break;
+//           default:
+//             console.log();
+//             console.log("Temperatura não encontrada.");
+//         };
+//     };
+// };
 
-menu();
+// menu();
 
 // 11. Fazer uma função que recebe um mês e um ano como parâmetros e retorna o número de dias daquele mês daquele ano. 
 // Dica: um ano é bissexto quando é múltiplo de 4 e não múltiplo de 100, ou também quando é múltiplo de 400.
 
+// const readline = require("readline-sync")
+
+// function main() {
+//     const mes = parseInt(readline.question("Digite o número do mês (1 a 12):"));
+//     const ano = parseInt(readline.question("Digite o ano:"));
+
+//     const diasDoMes = diasNoMes(mes, ano);
+//     if (diasDoMes === -1) {
+//         console.log("Mês inválido");
+//     } else {
+//         console.log(`O mês ${mes} do ano ${ano} tem ${diasDoMes} dias.`);
+//     }
+// };
+
 // function anoBissexto(ano) {
 //     return (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
-// }
+// };
 
 // function diasNoMes(mes, ano) {
 //     const trintaEumDias = [1, 3, 5, 7, 8, 10, 12];
@@ -285,22 +302,7 @@ menu();
 //     } else {
 //         return -1; 
 //     }
-// }
-
-// const readline = require("readline-sync")
-
-// function main() {
-//     const mes = parseInt(readline.question("Digite o número do mês (1 a 12):"));
-//     const ano = parseInt(readline.question("Digite o ano:"));
-
-//     const diasDoMes = diasNoMes(mes, ano);
-//     if (diasDoMes === -1) {
-//         console.log("Mês inválido");
-//     } else {
-//         console.log(`O mês ${mes} do ano ${ano} tem ${diasDoMes} dias.`);
-//     }
-// }
-
+// };
 // main();
 
 // 12. Faça uma função que recebe, por parâmetro, a hora de início e a hora de término de um jogo, ambas subdivididas em 2 valores distintos: horas e minutos. 
@@ -349,9 +351,22 @@ menu();
 
 // // Sequência fibonnaci até o n-ésimo 17;  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
 
-// const n = 17; 
-// const resultado = fibonacci(n);
-// console.log(`O ${n}-ésimo termo da sequência de Fibonacci é ${resultado}.`);
+// const readline = require("readline-sync");
+
+// function menu () {  
+//   const n = parseInt(readline.question("Digite de 1 a 17 para saber o n-ésimo termo da sequência de Fibonnaci: "));
+//   const resultado = fibonacci(n);
+//   if (n < 1 || n >= 18) {
+//     console.log("Digite apenas de 1 até 17.");
+//     return menu()    
+//   } else {  
+//     console.log(`O ${n}-ésimo termo da sequência de Fibonacci é ${resultado}.`);
+//   };
+// };
+
+// menu();
+
+
 
 
 
