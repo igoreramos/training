@@ -1,2 +1,2 @@
-# training
+# Softex
 local to training 
