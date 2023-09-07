@@ -50,7 +50,7 @@ function simularEleicao() {
           break;
           default:
           votosNulo++;
-          alert("Voto nulo: número de candidato inválido.");
+          console.log("Voto nulo: número de candidato inválido.");
           break;
         }
          
