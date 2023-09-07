@@ -12,3 +12,6 @@ coresDasPessoas[0] = "roxo"
 console.log(pessoasGeral);
 
 
+
+
+
