@@ -83,9 +83,9 @@ while (loop) {
                 console.log(m.nome);
                };
             };
-         break;
+        break;
 
-         case 4:
+        case 4:
            matriculas = readline.questionInt("Digite a matrícula do aluno que deseja alterar: ");
            for (const a of alunos) {
             if (a.matricula === matriculas) {
@@ -97,7 +97,8 @@ while (loop) {
                 console.log("Aluno alterado com sucesso!");
             };
            };                     
-         break;
+        break;
+        
         case 0: 
           console.log("Saindo do sistema...");
           loop = false;
