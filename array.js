@@ -1,3 +1,25 @@
+// const array1 = [3, 7, 9, 1, 0];
+// console.log(array1);
+
+// // push adiciona em ultimo.
+// array1.push(10)
+// console.log(array1);
+
+// // pop retira o ultimo item
+// array1.pop()
+// console.log(array1);
+
+// // shift retira o primeiro item
+// array1.shift();
+// console.log(array1);
+
+// // splice retira o (indice, numeros apos o indice)
+// array1.splice(0, 1)
+// console.log(array1);
+
+
+
+
 
 // const meuArray = [10, 20, 30, 40, 50];
 // console.log(meuArray[1]);
