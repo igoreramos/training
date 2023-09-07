@@ -1,4 +1,5 @@
 const readline = require("readline-sync")
+var loop = true;
 function simularEleicao() {
     let votosCandidatoX = 0;
     let votosCandidatoY = 0;
@@ -6,7 +7,7 @@ function simularEleicao() {
     let votosBranco = 0;
     let votosNulo = 0;
 
-    while (true) {
+    while (loop) {
 
       console.log();                
       let voto = parseInt(readline.question(`Digite o número do seu voto \n
@@ -50,7 +51,8 @@ function simularEleicao() {
           break;
           default:
           votosNulo++;
-          alert("Voto nulo: número de candidato inválido.");
+          console.log("Voto nulo: número de candidato inválido.");
+          loop = false;
           break;
         }
          
