@@ -42,7 +42,7 @@ while (loop) {
           soma += a.notas[i];
         }
         let media = soma / a.notas.length;
-        console.log(`\t- Média : ${media}`);
+        console.log(`\t- Média : ${media.toFixed(1)}`);
       }
       console.log("------------------------");
       readline.keyInPause();
