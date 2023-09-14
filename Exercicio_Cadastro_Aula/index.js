@@ -1,3 +1,5 @@
+// CADASTRO EM UM BANCO
+
 const readline = require("readline-sync");
 
 class Cliente {
@@ -60,11 +62,12 @@ while (loop) {
   console.log("0 - Sair do sistema");
   console.log("1 - Listar todos os clientes");
   console.log("2 - Cadastrar um novo cliente");
-  console.log("3 - Buscar um cliente");
-  console.log("4 - Ver saldo bancário");
-  console.log("5 - Sacar dinheiro");
-  console.log("6 - Depositar dinheiro");
-  console.log("7 - Listar transações do cliente");
+  console.log("3 - Alterar cadastro do Cliente");
+  console.log("4 - Buscar um cliente");
+  console.log("5 - Ver saldo bancário");
+  console.log("6 - Sacar dinheiro");
+  console.log("7 - Depositar dinheiro");
+  console.log("8 - Listar transações do cliente");
   console.log("==========================");
   let opcao = readline.questionInt("Escolha uma opção: ");
 
@@ -72,28 +75,56 @@ while (loop) {
     case 1:
       console.log("Listando todos os clientes");
       for (const cliente of clientes) {
-          console.log("------------------------");
-          console.log(`Nome: ${cliente.nome}`);
-          console.log(`CPF: ${cliente.formatarCPF()}`); // Formata o CPF antes de exibir
-          console.log(`Agência: ${cliente.agencia}`);
-          console.log(`Conta: ${cliente.conta}`);
-          console.log(`Saldo: R$ ${cliente.saldo.toFixed(2)}`);
+        console.log("------------------------");
+        console.log(`Nome: ${cliente.nome}`);
+        console.log(`CPF: ${cliente.formatarCPF()}`);
+        console.log(`Agência: ${cliente.agencia}`);
+        console.log(`Conta: ${cliente.conta}`);
+        console.log(`Saldo: R$ ${cliente.saldo.toFixed(2)}`);
       }
       console.log("------------------------");
       readline.keyInPause();
-      break;
+    break;
 
     case 2:
       let nomeCliente = readline.question("Digite seu nome completo: ");
       let cpfCliente = readline.question("Digite seu CPF: ");
       let saldoCliente = readline.questionFloat("Digite o saldo que deseja depositar: ");
-      const novoCliente = new Cliente(nomeCliente, cpfCliente, saldoCliente);
-      clientes.push(novoCliente);
-      console.log("Cliente cadastrado com sucesso!");
+      // Verifique se o CPF já está cadastrado
+      const cpfExistente = clientes.find((cliente) => cliente.cpf === cpfCliente);
+      if (cpfExistente) {
+        console.log("Esse CPF já está cadastrado.");
+      } else {
+        // Se o CPF não estiver cadastrado, crie um novo cliente
+        const novoCliente = new Cliente(nomeCliente, cpfCliente, saldoCliente);
+        clientes.push(novoCliente);
+        console.log("Cliente cadastrado com sucesso!");
+      }
       readline.keyInPause();
+    break;   
+    
+      case 3:
+        let buscarCPF1 = readline.question("Digite o CPF do cliente a ser alterado: ");
+        let clienteEncontrado = false;
+        for (const cliente of clientes) {
+          if (buscarCPF1 === cliente.cpf) {
+            console.log(`Cliente encontrado: ${cliente.nome}`);
+            let novoCPF = readline.question("Digite o novo CPF do Cliente: ");
+            let novoNome = readline.question("Digite o novo nome do Cliente: ");
+            cliente.cpf = novoCPF;
+            cliente.nome = novoNome;
+            console.log("Informações do cliente atualizadas com sucesso!");
+             clienteEncontrado = true;
+             break;
+          } else {
+            console.log("Cliente não encontrado.");
+          }
+        }
+          readline.keyInPause();
       break;
 
-    case 3:
+
+    case 4:
       let buscaCPF = readline.question("Digite o CPF do cliente que deseja buscar: ");
       for (const cliente of clientes) {
         if (cliente.cpf === buscaCPF) {
@@ -108,8 +139,9 @@ while (loop) {
       }
       readline.keyInPause();
       break;
+   
 
-    case 4:
+    case 5:
       let buscaCPFSaldo = readline.question("Digite o seu CPF para ver o saldo: ");
       for (const cliente of clientes) {
         if (cliente.cpf === buscaCPFSaldo) {
@@ -118,9 +150,10 @@ while (loop) {
       }
       readline.keyInPause();
       break;
+      
 
-    case 5:
-      let agenciaContaSaque = readline.question("Digite a agência e a conta (no formato XXXX-XXXXX-X) do cliente que deseja sacar dinheiro: ");
+    case 6:
+      let agenciaContaSaque = readline.question(`Digite sua agência e conta do cliente que deseja para sacar dinheiro: `);
       let [agenciaSaque, contaSaque] = agenciaContaSaque.split("-");
       for (const cliente of clientes) {
         if (cliente.agencia === agenciaSaque && cliente.conta === `${contaSaque}-${cliente.conta.slice(-1)}`) {
@@ -130,9 +163,10 @@ while (loop) {
       }
       readline.keyInPause();
       break;
+     
 
-    case 6:
-      let agenciaContaDeposito = readline.question("Digite a agência e a conta (no formato XXXX-XXXXX-X) do cliente que deseja depositar dinheiro: ");
+    case 7:
+      let agenciaContaDeposito = readline.question("Digite a agência e a conta do cliente que deseja depositar dinheiro: ");
       let [agenciaDeposito, contaDeposito] = agenciaContaDeposito.split("-");
       for (const cliente of clientes) {
         if (cliente.agencia === agenciaDeposito && cliente.conta === `${contaDeposito}-${cliente.conta.slice(-1)}`) {
@@ -142,9 +176,10 @@ while (loop) {
       }
       readline.keyInPause();
       break;
+    
 
-    case 7:
-      let buscaCPFTransacoes = readline.question("Digite o CPF do cliente que deseja listar transações: ");
+    case 8: 
+     let buscaCPFTransacoes = readline.question("Digite o CPF do cliente que deseja listar transações: ");
       for (const cliente of clientes) {
         if (cliente.cpf === buscaCPFTransacoes) {
           cliente.listarTransacoes();
