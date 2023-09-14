@@ -152,30 +152,32 @@ while (loop) {
       break;
       
 
-    case 6:
-      let agenciaContaSaque = readline.question(`Digite sua agência e conta do cliente que deseja para sacar dinheiro: `);
-      let [agenciaSaque, contaSaque] = agenciaContaSaque.split("-");
-      for (const cliente of clientes) {
-        if (cliente.agencia === agenciaSaque && cliente.conta === `${contaSaque}-${cliente.conta.slice(-1)}`) {
-          let valorSaque = readline.questionFloat("Digite o valor a sacar: ");
-          cliente.sacar(valorSaque);
+      case 6:
+        let agenciaSaque = readline.question("Digite sua agência: ");
+        let contaSaque = readline.question("Digite sua conta (no formato XXXX-X): ");
+        for (const cliente of clientes) {
+          if (cliente.agencia === agenciaSaque && cliente.conta === contaSaque) {
+            let valorSaque = readline.questionFloat("Digite o valor a ser sacado: ");
+            cliente.sacar(valorSaque);
+            break; // Sair do loop após processar o saque para o cliente encontrado
+          }
         }
-      }
-      readline.keyInPause();
-      break;
+        readline.keyInPause();
+      break;     
      
 
     case 7:
-      let agenciaContaDeposito = readline.question("Digite a agência e a conta do cliente que deseja depositar dinheiro: ");
-      let [agenciaDeposito, contaDeposito] = agenciaContaDeposito.split("-");
-      for (const cliente of clientes) {
-        if (cliente.agencia === agenciaDeposito && cliente.conta === `${contaDeposito}-${cliente.conta.slice(-1)}`) {
-          let valorDeposito = readline.questionFloat("Digite o valor a depositar: ");
-          cliente.depositar(valorDeposito);
+      let agenciaDeposito = readline.question("Digite sua agência: ");
+        let contaDeposito = readline.question("Digite sua conta (no formato XXXX-X): ");
+        for (const cliente of clientes) {
+          if (cliente.agencia === agenciaDeposito && cliente.conta === contaDeposito) {
+            let valorDeposito = readline.questionFloat("Digite o valor a ser depositado: ");
+            cliente.depositar(valorDeposito);
+            break; // Sair do loop após processar o saque para o cliente encontrado
+          }
         }
-      }
-      readline.keyInPause();
-      break;
+        readline.keyInPause();
+    break;
     
 
     case 8: 
@@ -186,17 +188,17 @@ while (loop) {
         }
       }
       readline.keyInPause();
-      break;
+    break;
 
     case 0:
       console.log("Saindo do sistema...");
       loop = false;
-      break;
+    break;
 
     default:
       console.log("Opção inválida!");
-}
-}
+  };
+};
     
   
 
