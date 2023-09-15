@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     cadastrarClienteBtn.addEventListener("click", function () {
-      cadastrarCliente(); // Chama a função para cadastrar um novo cliente quando o botão for clicado
+      cadastrarCliente();
     });
   });
   
