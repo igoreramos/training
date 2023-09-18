@@ -5,7 +5,7 @@ class Cliente {
         this.nome = nome; // Armazena o nome do cliente.
         this.cpf = cpf; // Armazena o CPF do cliente.
         this.agencia = "3205"; // Define uma agência fixa para todos os clientes.
-        this.conta = this.gerarContaAleatoria(); // Gera um número de conta aleatório quando um cliente é criado.
+        this.conta = this.gerarContaAleatoria(); // Armazena um número de conta aleatório gerado pela função gerarContaAleatoria(linha 39).
         this.saldo = saldo; // Armazena o saldo inicial do cliente.
         this.transacoes = []; // Cria uma lista vazia para armazenar as transações do cliente.
     }
