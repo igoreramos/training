@@ -1,0 +1,16 @@
+{
+  "name": "training",
+  "version": "1.0.0",
+  "description": "LOCAL PARA REALIZAÇÃO DE ATIVIDADES RELACIONADAS AS AULAS PRESENCIAIS DO FAP SOFTEX. E PARA REALIZAÇÃO DE ATIVIDADES DO JOYCLASS DA FAP SOFTEX.",
+  "main": "index.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "tsc": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
