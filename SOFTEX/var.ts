@@ -50,18 +50,23 @@
 // veiculos.splice(1, 3)
 // console.log("Metodo Splice", veiculos);
 
-enum TipoDeUsuario {
-    Adm,
-    Comum,
-    Convidado,
-};
-function verificarPermissao(usuario: TipoDeUsuario): void {
-    if (usuario === TipoDeUsuario.Adm) {
-        // Realizar ações administrativas
-      } else {
-        // Acesso restrito para outros tipos de usuário
-      }    
-};
+// enum TipoDeUsuario {
+//     Adm,
+//     Comum,
+//     Convidado,
+// };
+// function verificarPermissao(usuario: TipoDeUsuario): void {
+//     if (usuario === TipoDeUsuario.Adm) {
+//         // Realizar ações administrativas
+//       } else {
+//         // Acesso restrito para outros tipos de usuário
+//       }    
+// };
+
+// var num1: number = 25
+// var raizQuadrada: number =  Math.sqrt(num1)
+// console.log(raizQuadrada);
+
 
 
 
