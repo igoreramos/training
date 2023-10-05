@@ -1,9 +1,10 @@
-const readline = require ("readline-sync")
+const readline = require("readline-sync")
 
-function calcularMedia() {
-    var nota1 = readline.question("Digite a primeira nota (De 0 a 10): ");
-    var nota2 = readline.question("Digite a segunda nota (De 0 a 10): ");
-    var nota3 = readline.question("Digite a terceira nota (De 0 a 10): ");
-    return (nota1 + nota2 + nota3) / 3
+function calcularMedia1() {
+    const nota1 = parseInt(readline.question("Digite a nota de 0 a 10: "))
+    const nota2 = parseInt(readline.question("Digite a nota de 0 a 10: "))
+    const nota3 = parseInt(readline.question("Digite a nota de 0 a 10: "))
+    const media = (nota1 + nota2 + nota3) / 3
+    console.log(`A média é: ${media}`);
 }
-console.log(calcularMedia());
+calcularMedia1()
