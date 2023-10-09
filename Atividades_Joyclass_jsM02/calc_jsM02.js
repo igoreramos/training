@@ -1,7 +1,7 @@
 function soma(a, b) {
     return a + b
 }
-function multiplicacao(a, b ) {
+function multiplicacao(a, b) {
     return a * b
 }
 function subtracao(a, b) {
@@ -15,9 +15,9 @@ const readline = require(`readline-sync`)
 
 let n1 = parseInt(readline.question(`Digite o primeiro número: `));
 let n2 = parseInt(readline.question(`Digite o segundo número: `));
-let op = parseInt(readline.question(`Digite a operação desejada: `));
+let op = readline.question(`Digite a operação desejada: `);
 
-var resultado 
+let resultado
 
 if (op == "+") {
     resultado = soma(n1, n2);
@@ -29,7 +29,8 @@ else if (op == "*") {
     resultado = multiplicacao(n1, n2);
 }
 else if (op == "/") {
-    resultado = divisao(n1, n2);
+    resultado = divisao(n1, n2)
+    console.log(`O resto da divisão é: ${divisao(n1, n2) % 2}`);
 };
 
-console.log(resultado);
+console.log(`O resultado é: ${resultado}`);
