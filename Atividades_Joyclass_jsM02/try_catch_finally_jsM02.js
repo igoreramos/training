@@ -1,4 +1,4 @@
-const readline = require("readliny-sync")
+const readline = require("readline-sync")
   
 try {
   const numero1 = parseFloat(readline.question("Informe o primeiro número:"));
