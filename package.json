@@ -4,6 +4,7 @@
   "description": "LOCAL PARA REALIZAÇÃO DE ATIVIDADES RELACIONADAS AS AULAS PRESENCIAIS DO FAP SOFTEX. E PARA REALIZAÇÃO DE ATIVIDADES DO JOYCLASS DA FAP SOFTEX.",
   "main": "var.ts",
   "dependencies": {
+    "express": "^4.18.2",
     "readline-sync": "^1.4.10",
     "tsc": "^2.0.4"
   },
