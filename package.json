@@ -4,9 +4,13 @@
   "description": "LOCAL PARA REALIZAÇÃO DE ATIVIDADES RELACIONADAS AS AULAS PRESENCIAIS DO FAP SOFTEX. E PARA REALIZAÇÃO DE ATIVIDADES DO JOYCLASS DA FAP SOFTEX.",
   "main": "var.ts",
   "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.4",
+    "axios": "^1.6.2",
     "express": "^4.18.2",
     "readline-sync": "^1.4.10",
-    "tsc": "^2.0.4"
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "start": "ts-node var.ts"
@@ -15,6 +19,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.2"
   }
 }
