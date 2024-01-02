@@ -1,7 +1,21 @@
-GET http://localhost:3000/livros/1
+### LISTAR TODOS OS USUARIOS
+GET  http://localhost:3000/usuarios
 
-###
-GET http://localhost:3000/livros/2
+### LISTAR USUARIOS POR ID
+GET http://localhost:3000/usuarios/1
 
-###
-GET http://localhost:3000/livros
+### CADASTRAR NOVO USUARIO
+POST  http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Charles Tompson"
+};
+
+### ATUALIZAR USUARIO
+PUT http://localhost:3000/usuarios/1
+Content-Type: application/json
+
+{
+    "nome": "Thomas Jefferson"
+}
