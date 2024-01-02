@@ -1,1 +1,7 @@
-GET http://localhost:3000
+GET http://localhost:3000/livros/1
+
+###
+GET http://localhost:3000/livros/2
+
+###
+GET http://localhost:3000/livros
