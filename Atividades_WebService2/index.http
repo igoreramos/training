@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "nome": "Charles Tompson"
-};
+}
 
 ### ATUALIZAR USUARIO
 PUT http://localhost:3000/usuarios/1
